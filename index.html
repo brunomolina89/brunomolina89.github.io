@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Google Meet Link Generator</title>
+</head>
+<body>
+  <h1>Random Google Meet Link Generator</h1>
+  
+  <p id="meetLink"></p>
+
+  <script>
+    function generateRandomString(length) {
+      const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
+    function generateLink() {
+      const randomString = generateRandomString(10); // You can adjust the length of the random string as needed
+      const meetLink = `https://meet.google.com/${randomString}`;
+      document.getElementById('meetLink').innerHTML = `<a href="${meetLink}" target="_blank">${meetLink}</a>`;
+    }
+
+    // Call the generateLink function when the page loads
+    generateLink();
+  </script>
+</body>
+</html>
