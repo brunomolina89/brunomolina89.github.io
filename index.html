@@ -22,7 +22,7 @@
 
     function generateLink() {
       const randomString = generateRandomString(3); // You can adjust the length of the random string as needed
-      const randomString2 = generateRandomString(3); // You can adjust the length of the random string as needed
+      const randomString2 = generateRandomString(4); // You can adjust the length of the random string as needed
       const randomString3 = generateRandomString(3); // You can adjust the length of the random string as needed
       const meetLink = `https://meet.google.com/${randomString}-${randomString2}-${randomString3}`;
       document.getElementById('meetLink').innerHTML = `<a href="${meetLink}" target="_blank">${meetLink}</a>`;
